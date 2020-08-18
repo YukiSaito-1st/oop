@@ -1,10 +1,54 @@
 <?php
 
 // 以下にCarクラスを定義して、当プログラムを実行した時にエラーがでないようにして下さい。
+class Car 
+{
+    private $carName; // 車名
+    private $carNumber;  // 車体番号
+    private $carColor; // カラー
 
+    public function __construct($carName, $carNumber, $carColor) 
+    {
+        $this->setName($carName);
+        $this->setNumber($carNumber);
+        $this->setColor($carColor);
+    }
 
+    public function getName() 
+    {
+        return $this->carName;
+    }
 
+    public function getNumber() 
+    {
+        return $this->carNumber;
+    }
 
+    public function getColor() 
+    {
+        return $this->carColor;
+    }
+
+    public function setName($carName) 
+    {
+        $this->carName = $carName;
+    }
+
+    public function setNumber($carNumber) 
+    {
+        $this->carNumber = $carNumber;
+    }
+
+    public function setColor($carColor) 
+    {
+        $this->carColor = $carColor;
+    }
+
+    public function infomation() 
+    {
+        echo '車の車種:' . $this->getName() . '、車体番号:' . $this->getNumber() .  '、カラー:' . $this->getColor() . 'です。';
+    }
+}
 
 // 以下を実行した時にエラーがでないようにして下さい。
 // Carクラスのインスタンスを生成
