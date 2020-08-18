@@ -46,7 +46,7 @@ class Car
 
     public function infomation() 
     {
-        echo '車の車種:' . $this->getName() . '、車体番号:' . $this->getNumber() .  '、カラー:' . $this->getColor() . 'です。';
+        return '車の車種:' . $this->getName() . '、車体番号:' . $this->getNumber() .  '、カラー:' . $this->getColor() . 'です。';
     }
 }
 
@@ -67,8 +67,8 @@ class Taxi extends Car
 
     public function lower($lowerPassenger)
     {
-        $this->passenger -= $lowerPassenger;
-        if($this->getPassenger() > 0) {
+        if(($this->passenger - $lowerPassenger) >= 0) {
+            $this->passenger -= $lowerPassenger;
             echo $this->getPassenger() . '人降車しました。';
         } else {
             echo '降車人数に誤りがあります';
@@ -77,7 +77,7 @@ class Taxi extends Car
 
     public function infomation()
     {
-        echo '車の車種:' . $this->getName() . '、車体番号:' . $this->getNumber() .  '、カラー:' . $this->getColor() . '、乗車人数は' . $this->getPassenger() . '人です。';
+        return '車の車種:' . $this->getName() . '、車体番号:' . $this->getNumber() .  '、カラー:' . $this->getColor() . '、乗車人数は' . $this->getPassenger() . '人です。';
     }
 }
 
@@ -105,5 +105,5 @@ echo '<br>';
 $taxi1->lower(2);
 echo '<br>';
 
-// 1人降車
-$taxi1->lower(1);
+// 2人降車
+$taxi1->lower(2);
